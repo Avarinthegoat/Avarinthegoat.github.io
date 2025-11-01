@@ -5,37 +5,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Avarin | Roblox Developer Portfolio</title>
   <style>
-    body {
-      background-color: #0d001a;
-      color: #d6b6ff;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      padding: 50px;
+    /* === GENERAL STYLING === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
-    h1 { color: #a855f7; }
-    a { color: #b794f4; text-decoration: none; }
-    .card {
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, #1a0033, #080010);
+      color: #e2d0ff;
+      overflow-x: hidden;
+    }
+
+    /* === NAVBAR === */
+    nav {
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 10;
+    }
+    nav h1 {
+      color: #a855f7;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    nav a {
+      color: #d1b3ff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ffffff; }
+
+    /* === SECTIONS === */
+    section {
+      min-height: 100vh;
+      padding: 120px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* === HERO === */
+    #home h2 {
+      font-size: 3rem;
+      color: #b76eff;
+      margin-bottom: 10px;
+    }
+    #home p {
+      max-width: 600px;
+      color: #d4baff;
+      font-size: 1.2rem;
+    }
+
+    /* === ABOUT === */
+    #about h2, #projects h2, #skills h2, #contact h2 {
+      color: #a855f7;
+      margin-bottom: 15px;
+      font-size: 2rem;
+    }
+    #about p {
+      max-width: 800px;
+      line-height: 1.6;
+      color: #cdbfff;
+      font-size: 1.1rem;
+    }
+
+    /* === PROJECTS === */
+    .project-card {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
       padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 20px auto;
+      margin: 20px;
+      width: 280px;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      border-color: #a855f7;
+    }
+    .project-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* === CONTACT === */
+    .contact-info p {
+      font-size: 1.1rem;
+      color: #d5c3ff;
+      margin: 8px 0;
+    }
+
+    /* === FOOTER === */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #b591ff;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
   </style>
 </head>
 <body>
-  <h1>👋 Hey, I'm Avarin</h1>
-  <p>💻 Roblox Developer | GUI Designer | Scripter</p>
-  <div class="card">
+
+  <nav>
+    <h1>Avarin</h1>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <section id="home">
+    <h2>👋 Hey, I'm Avarin</h2>
+    <p>💻 A Roblox Developer, Scripter, and GUI Designer with 1.5 years of experience creating immersive and creative game systems.</p>
+  </section>
+
+  <section id="about">
+    <h2>📖 About Me</h2>
+    <p>I’m passionate about designing clean UI, advanced scripts, and immersive gameplay. I’ve worked with teams on multiple Roblox projects — building innovative systems and helping games grow fast.</p>
+  </section>
+
+  <section id="projects">
     <h2>🎮 Projects</h2>
-    <p>Project: Escape, Ironwood, OMI, BPD, Go-Kart Blitz, Fatal, RoState, OFP</p>
-  </div>
-  <div class="card">
-    <h2>📞 Contact</h2>
-    <p>Discord: <b>avarin_thegoat</b></p>
-    <p>Email: <b>aaraizamir1@gmail.com</b></p>
-    <p><a href="https://www.roblox.com/share?code=83f990121a8e5f42a6a500102c374522&type=Profile&source=ProfileShare&stamp=1761975576301">Roblox Profile</a></p>
-  </div>
+    <div class="project-container">
+      <div class="project-card"><h3>Project: Escape</h3><p>AI horror escape game built with advanced pathfinding.</p></div>
+      <div class="project-card"><h3>Ironwood</h3><p>Story-driven sci-fi game featuring immersive missions.</p></div>
+      <div class="project-card"><h3>OMI</h3><p>Realistic simulation-based game with deep mechanics.</p></div>
+      <div class="project-card"><h3>BPD</h3><p>Roleplay game with detailed GUI systems and moderation tools.</p></div>
+      <div class="project-card"><h3>Go-Kart Blitz</h3><p>Fast-paced multiplayer kart racing experience.</p></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>⚙️ Skills</h2>
+    <p>💠 Roblox Lua Scripting<br>💠 GUI/UX Design<br>💠 Game Optimization<br>💠 Team Collaboration<br>💠 AI Behavior Design</p>
+  </section>
+
+  <section id="contact">
+    <h2>📞 Contact Me</h2>
+    <div class="contact-info">
+      <p>📧 Email: <b>aaraizamir1@gmail.com</b></p>
+      <p>💬 Discord: <b>avarin_thegoat</b></p>
+      <p>🔗 <a href="https://www.roblox.com/share?code=83f990121a8e5f42a6a500102c374522&type=Profile&source=ProfileShare&stamp=1761975576301" target="_blank">Roblox Profile</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Avarin — Roblox Developer Portfolio
+  </footer>
+
 </body>
 </html>
